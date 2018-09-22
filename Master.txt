@@ -1,0 +1,144 @@
+Sub Macro1()
+'
+' Macro1 Macro
+'
+
+'
+ChDir _
+"G:\19_Frontis\기술 용역\3. KITECH - 양승민박사님 입자 응집 해석\180826_Agg_Modeling\Temperature Variation\smoluchowski\dp0_300K"
+Workbooks.OpenText Filename:= _
+"G:\19_Frontis\기술 용역\3. KITECH - 양승민박사님 입자 응집 해석\180826_Agg_Modeling\Temperature Variation\smoluchowski\dp0_300K\surf-ave-inlet-density-bin-4-rfile.out" _
+, Origin:=949, StartRow:=1, DataType:=xlDelimited, TextQualifier:= _
+xlDoubleQuote, ConsecutiveDelimiter:=True, Tab:=True, Semicolon:=False, _
+Comma:=False, Space:=True, Other:=False, FieldInfo:=Array(Array(1, 1), _
+Array(2, 1), Array(3, 1), Array(4, 1)), TrailingMinusNumbers:=True
+Workbooks.OpenText Filename:= _
+"G:\19_Frontis\기술 용역\3. KITECH - 양승민박사님 입자 응집 해석\180826_Agg_Modeling\Temperature Variation\smoluchowski\dp0_300K\surf-ave-outlet-density-bin-0-rfile.out" _
+, Origin:=949, StartRow:=1, DataType:=xlDelimited, TextQualifier:= _
+xlDoubleQuote, ConsecutiveDelimiter:=True, Tab:=True, Semicolon:=False, _
+Comma:=False, Space:=True, Other:=False, FieldInfo:=Array(Array(1, 1), _
+Array(2, 1), Array(3, 1), Array(4, 1)), TrailingMinusNumbers:=True
+Workbooks.OpenText Filename:= _
+"G:\19_Frontis\기술 용역\3. KITECH - 양승민박사님 입자 응집 해석\180826_Agg_Modeling\Temperature Variation\smoluchowski\dp0_300K\surf-ave-outlet-density-bin-1-rfile.out" _
+, Origin:=949, StartRow:=1, DataType:=xlDelimited, TextQualifier:= _
+xlDoubleQuote, ConsecutiveDelimiter:=True, Tab:=True, Semicolon:=False, _
+Comma:=False, Space:=True, Other:=False, FieldInfo:=Array(Array(1, 1), _
+Array(2, 1), Array(3, 1), Array(4, 1)), TrailingMinusNumbers:=True
+Workbooks.OpenText Filename:= _
+"G:\19_Frontis\기술 용역\3. KITECH - 양승민박사님 입자 응집 해석\180826_Agg_Modeling\Temperature Variation\smoluchowski\dp0_300K\surf-ave-outlet-density-bin-2-rfile.out" _
+, Origin:=949, StartRow:=1, DataType:=xlDelimited, TextQualifier:= _
+xlDoubleQuote, ConsecutiveDelimiter:=True, Tab:=True, Semicolon:=False, _
+Comma:=False, Space:=True, Other:=False, FieldInfo:=Array(Array(1, 1), _
+Array(2, 1), Array(3, 1), Array(4, 1)), TrailingMinusNumbers:=True
+Workbooks.OpenText Filename:= _
+"G:\19_Frontis\기술 용역\3. KITECH - 양승민박사님 입자 응집 해석\180826_Agg_Modeling\Temperature Variation\smoluchowski\dp0_300K\surf-ave-outlet-density-bin-3-rfile.out" _
+, Origin:=949, StartRow:=1, DataType:=xlDelimited, TextQualifier:= _
+xlDoubleQuote, ConsecutiveDelimiter:=True, Tab:=True, Semicolon:=False, _
+Comma:=False, Space:=True, Other:=False, FieldInfo:=Array(Array(1, 1), _
+Array(2, 1), Array(3, 1), Array(4, 1)), TrailingMinusNumbers:=True
+Workbooks.OpenText Filename:= _
+"G:\19_Frontis\기술 용역\3. KITECH - 양승민박사님 입자 응집 해석\180826_Agg_Modeling\Temperature Variation\smoluchowski\dp0_300K\surf-ave-outlet-density-bin-4-rfile.out" _
+, Origin:=949, StartRow:=1, DataType:=xlDelimited, TextQualifier:= _
+xlDoubleQuote, ConsecutiveDelimiter:=True, Tab:=True, Semicolon:=False, _
+Comma:=False, Space:=True, Other:=False, FieldInfo:=Array(Array(1, 1), _
+Array(2, 1), Array(3, 1), Array(4, 1)), TrailingMinusNumbers:=True
+Workbooks.OpenText Filename:= _
+"G:\19_Frontis\기술 용역\3. KITECH - 양승민박사님 입자 응집 해석\180826_Agg_Modeling\Temperature Variation\smoluchowski\dp0_300K\volume-flow-rate-inlet-rfile.out" _
+, Origin:=949, StartRow:=1, DataType:=xlDelimited, TextQualifier:= _
+xlDoubleQuote, ConsecutiveDelimiter:=True, Tab:=True, Semicolon:=False, _
+Comma:=False, Space:=True, Other:=False, FieldInfo:=Array(Array(1, 1), _
+Array(2, 1), Array(3, 1), Array(4, 1)), TrailingMinusNumbers:=True
+Workbooks.OpenText Filename:= _
+"G:\19_Frontis\기술 용역\3. KITECH - 양승민박사님 입자 응집 해석\180826_Agg_Modeling\Temperature Variation\smoluchowski\dp0_300K\volume-flow-rate-outlet-rfile.out" _
+, Origin:=949, StartRow:=1, DataType:=xlDelimited, TextQualifier:= _
+xlDoubleQuote, ConsecutiveDelimiter:=True, Tab:=True, Semicolon:=False, _
+Comma:=False, Space:=True, Other:=False, FieldInfo:=Array(Array(1, 1), _
+Array(2, 1), Array(3, 1), Array(4, 1)), TrailingMinusNumbers:=True
+
+Windows("volume-flow-rate-outlet-rfile.out").Activate
+Range("B4").Select
+Range(Selection, Selection.End(xlDown)).Select
+Selection.Copy
+Windows("180910_Agg_Model_Comparison_Results.xlsx").Activate
+Range("B4").Select
+ActiveSheet.Paste
+Windows("volume-flow-rate-outlet-rfile.out").Activate
+Application.CutCopyMode = False
+ActiveWindow.Close
+
+Windows("volume-flow-rate-inlet-rfile.out").Activate
+Range("B4").Select
+Range(Selection, Selection.End(xlDown)).Select
+Selection.Copy
+Windows("180910_Agg_Model_Comparison_Results.xlsx").Activate
+Range("A4").Select
+ActiveSheet.Paste
+Windows("volume-flow-rate-inlet-rfile.out").Activate
+Application.CutCopyMode = False
+ActiveWindow.Close
+
+Windows("surf-ave-outlet-density-bin-4-rfile.out").Activate
+Range("B4").Select
+Range(Selection, Selection.End(xlDown)).Select
+Selection.Copy
+Windows("180910_Agg_Model_Comparison_Results.xlsx").Activate
+Range("E4").Select
+ActiveSheet.Paste
+Windows("surf-ave-outlet-density-bin-4-rfile.out").Activate
+    Application.CutCopyMode = False
+ActiveWindow.Close
+
+Windows("surf-ave-outlet-density-bin-3-rfile.out").Activate
+Range("B4").Select
+Range(Selection, Selection.End(xlDown)).Select
+Selection.Copy
+Windows("180910_Agg_Model_Comparison_Results.xlsx").Activate
+Range("F4").Select
+ActiveSheet.Paste
+Windows("surf-ave-outlet-density-bin-3-rfile.out").Activate
+    Application.CutCopyMode = False
+ActiveWindow.Close
+
+Windows("surf-ave-outlet-density-bin-2-rfile.out").Activate
+Range("B4").Select
+Range(Selection, Selection.End(xlDown)).Select
+Selection.Copy
+Windows("180910_Agg_Model_Comparison_Results.xlsx").Activate
+Range("G4").Select
+ActiveSheet.Paste
+Windows("surf-ave-outlet-density-bin-2-rfile.out").Activate
+    Application.CutCopyMode = False
+ActiveWindow.Close
+
+Windows("surf-ave-outlet-density-bin-1-rfile.out").Activate
+Range("B4").Select
+Range(Selection, Selection.End(xlDown)).Select
+Selection.Copy
+Windows("180910_Agg_Model_Comparison_Results.xlsx").Activate
+Range("H4").Select
+ActiveSheet.Paste
+Windows("surf-ave-outlet-density-bin-1-rfile.out").Activate
+    Application.CutCopyMode = False
+ActiveWindow.Close
+
+Windows("surf-ave-outlet-density-bin-0-rfile.out").Activate
+Range("B4").Select
+Range(Selection, Selection.End(xlDown)).Select
+Selection.Copy
+Windows("180910_Agg_Model_Comparison_Results.xlsx").Activate
+Range("I4").Select
+ActiveSheet.Paste
+Windows("surf-ave-outlet-density-bin-0-rfile.out").Activate
+    Application.CutCopyMode = False
+ActiveWindow.Close
+
+Windows("surf-ave-inlet-density-bin-4-rfile.out").Activate
+Range("B4").Select
+Range(Selection, Selection.End(xlDown)).Select
+Selection.Copy
+Windows("180910_Agg_Model_Comparison_Results.xlsx").Activate
+Range("D4").Select
+ActiveSheet.Paste
+Windows("surf-ave-inlet-density-bin-4-rfile.out").Activate
+    Application.CutCopyMode = False
+ActiveWindow.Close
